@@ -1,0 +1,17 @@
+version: '0.0.1'
+
+services:
+  api:
+    container_name: container-nestjs
+    image: container-nestjs
+    build:
+      context: .
+      dockerfile: dockerfile
+    ports:
+      - 3030:3000
+    networks:
+      - networks-host
+
+networks:
+  networks-host:
+    driver: bridge
